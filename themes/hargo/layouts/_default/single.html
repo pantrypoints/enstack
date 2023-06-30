@@ -1,0 +1,50 @@
+{{ define "main" }}
+
+{{ partial "page-title.html" . }}
+
+<section class="section pt-0">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-5 mb-4 mb-lg-0">
+        <!-- product image slider -->
+        <div class="product-slider">
+          {{ range .Params.Images }}
+          <div data-image="{{ .image | absURL }}">
+            <img class="img-fluid w-100" src="{{ .image | absURL }}" alt="product-img">
+          </div>
+          {{ end }}
+        </div>
+      </div>
+      <div class="col-lg-5 offset-lg-1">
+        <div class="content">
+          {{ .Content }}
+        </div>
+
+        <div class="mb-4 content">
+          <span class="lead text-primary font-weight-bold">{{ .Params.Cost }}</span>
+          <br>
+          <span class="text-secondary">{{ .Params.Costdef | markdownify }}</span>          
+        </div>
+
+
+        <h3 class="mb-4">{{ .Params.Cta }}</h3>
+        <form action="{{ .Site.Params.contact.formAction }}" method="POST">
+          <input type="text" class="form-control mb-2" id="name" name="name" placeholder="Your Name">
+          <input type="text" class="form-control mb-2" id="phone" name="phone" placeholder="Your Phone">                    
+          <input type="email" class="form-control mb-2" id="email" name="email" placeholder="Your Email">
+          <textarea name="message" id="message" class="form-control mb-2" placeholder="Your Message"></textarea>
+          <input name="address" id="source" type="hidden" value="{{ .Permalink }}">   
+          <button type="submit" value="send" class="btn btn-block btn-outline-primary rounded">Send Now</button>
+        </form>       
+
+        {{ with .Params.Gcash }}        
+          <img class="img-fluid w-100 my-5" src="{{ . | absURL }}" alt="GCash QR Code">
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ partial "cta2.html" . }}
+
+{{ end }}

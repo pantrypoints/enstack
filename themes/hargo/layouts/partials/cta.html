@@ -1,0 +1,19 @@
+{{ with .Site.Data.homepage.cta }}
+<!-- bg-gradient  -->
+<section class="py-5 my-5 position-relative" style="background-color: #a82000">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-7">
+        <h2 class="text-white mr-5">{{ .title | markdownify }}</h2>        
+        <div class="text-white mr-5 pr-5 pb-2">{{ .content | markdownify }}</div>
+        {{ with .button }}
+          <a href="{{ .link | absURL }}" class="btn btn-light btn-sm">{{ .label }}</a>
+        {{ end }}
+      </div>
+      <div class="col-lg-4 col-md-5 position-relative">
+        <img class="cta-image" src="{{ .image | absURL }}" alt="">
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}

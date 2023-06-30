@@ -1,0 +1,20 @@
+<section class="section-sm">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h2>{{ .Title }}</h2>
+        {{ with .Params.date }}
+          <time class="text-secondary">{{ .Format "January 2, 2006" }}</time>
+          <br>
+        {{ end }}
+        <p>{{ .Params.Description }}</p>        
+        <!-- <nav aria-label="breadcrumb">
+          <ol class="breadcrumb bg-transparent p-0">
+            <li class="breadcrumb-item"><a class="text-dark" href="{{ .Site.BaseURL }}">{{ .Site.Params.home }}</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{ .Title }}</li>
+          </ol>
+        </nav> -->
+      </div>
+    </div>
+  </div>
+</section>

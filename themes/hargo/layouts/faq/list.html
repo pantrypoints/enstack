@@ -1,0 +1,78 @@
+{{ define "main" }}
+
+{{ partial "page-title.html" . }}
+
+<section class="section pt-0">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4">
+        {{ with .Params.Video }}
+        <div class="img-border rounded mb-5 mb-md-0">
+          <img src="{{ .videoThumb | absURL }}" alt="video thumb" class="img-fluid rounded">
+          <a data-toggle="modal" data-src="{{ .videoURL | safeURL }}" data-target="#videoModal2"
+            class="text-color video-modal content-center"><i class="ti-control-play bg-gradient btn-play-lg"></i></a>
+          <!-- Modal -->
+          <div class="modal fade" id="videoModal2" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content border-0 rounded-0">
+                <iframe width="560" height="315" src="" id="video2" frameborder="0"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+        {{ end }}
+
+<!--         <div class="sticky-top top-100"> -->
+        <h3 class="my-5">Ask Your Question</h3>
+        <form action="{{ .Site.Params.contact.formAction }}" method="POST">
+          <input type="text" class="form-control mb-2" id="name" name="email[name]" placeholder="Your Name">
+          <input type="email" class="form-control mb-2" id="email" name="email[email]" placeholder="Your Email">
+          <textarea name="email[content]" id="message" class="form-control mb-2" placeholder="Your Message"></textarea>
+          <input name="email[address]" id="source" type="hidden" value="{{ .Permalink }}">            
+          <button type="submit" value="send" class="btn btn-block btn-outline-primary rounded">Send Now</button>
+        </form>
+      </div>
+<!--       </div> -->
+      <div class="col-lg-7 offset-lg-1">
+        <div class="p-4 content">
+          {{ .Content }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- <section class="section has-text-centered">
+<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15460.514538831501!2d121.0576995!3d14.3619668!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x468cc9e16fd3a918!2sCapri%20Island%20Garden%20Cafe!5e0!3m2!1sen!2sph!4v1652640880723!5m2!1sen!2sph" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</section> -->
+
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d964.9682886216727!2d121.067892!3d14.6631391!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b75cd04e5fbf%3A0x4b3bf2b5457c239d!2sBerkeley%20Square%2C%20Commonwealth%20Ave%2C%20Diliman%2C%20Quezon%20City%2C%20Metro%20Manila!5e0!3m2!1sen!2sph!4v1656250648963!5m2!1sen!2sph" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+<!-- <iframe
+  width="600"
+  height="450"
+  style="border:0"
+  loading="lazy"
+  allowfullscreen
+  referrerpolicy="no-referrer-when-downgrade"
+  src="https://www.google.com/maps/embed/v1/place?key=API_KEY
+    &q=Space+Needle,Seattle+WA">
+</iframe> -->
+
+{{ if .Site.Data.faq.map.enable }}
+<section class="section pt-0">
+  <div class="container">
+    <div id="map_canvas" data-latitude="{{ with .Site.Params.mapLatitude }} {{ . }} {{ end }}"
+      data-longitude="{{ with .Site.Params.mapLongitude }} {{ . }} {{ end }}"
+      data-marker="{{ with .Site.Params.mapMarker }} {{ . | absURL }} {{ end }}"></div>
+  </div>
+</section>
+{{ end }}
+
+
+{{ partial "cta3.html" . }}
+
+{{ end }}

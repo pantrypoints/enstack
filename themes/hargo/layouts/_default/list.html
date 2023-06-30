@@ -1,0 +1,33 @@
+{{ define "main" }}
+
+{{ partial "page-title.html" . }}
+
+
+<section class="section pt-0">
+  <div class="container">
+    <div class="card-columns">
+      {{ range .Data.Pages }}
+        <div class="card border-0 text-center shadow">
+          <a href="{{ .Permalink }}">
+            {{ range first 1 .Params.Images }}
+            <img src="{{ .image | absURL }}" alt="{{ .Title }}" class="card-img-top">
+            {{ end }}
+          </a>
+          <div class="card-body">
+            <a href="{{ .Permalink }}" class="h4">{{ .Title }}</a>
+            <p>{{ .Params.Description }}</p>
+            <div class="mb-4">
+              <span class="lead text-primary">{{ .Params.Price }}</span>
+              <s>{{ .Params.PriceBefore }}</s>
+            </div>
+            <a href="{{ .Permalink }}" class="btn btn-sm btn-outline-primary">View</a>      
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+{{ partial "cta.html" . }}
+
+{{ end }}

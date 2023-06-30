@@ -1,0 +1,260 @@
+{{ define "main" }}
+
+<!-- banner -->
+{{ if .Site.Data.homepage.banner.enable }}
+  {{ with .Site.Data.homepage.banner }}
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-7 mb-5 pt-5">
+        <h1 class="mt-5">{{ .title | markdownify }}</h1>
+        <p>{{ .content | markdownify }}</p>
+        {{ with .button1 }}
+          <a href="{{ .link }}" class="btn btn-primary mr-3 mb-2">{{ .label }}</a>
+        {{ end }}
+        {{ with .button2 }}
+          <a href="{{ .link }}" class="btn btn-outline-primary mr-3 mb-2">{{ .label }}</a>
+        {{ end }}      
+
+        {{ with .video }}
+        <a data-toggle="modal" data-src="{{ .videoURL | safeURL }}" data-target="#videoModal"
+          class="text-color video-modal"><i
+            class="ti-control-play bg-gradient hover-shadow btn-play mr-2"></i><span>{{ .btntxt | safeURL }}</span></a>
+        {{ end }}
+        
+        <!-- Modal -->
+        <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content border-0 rounded-0">
+              <iframe width="560" height="315" src="" id="video" frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-5 mb-5">
+        <img src="{{ .image | absURL }}" class="img-fluid rounded" alt="Main Image">
+      </div>
+    </div>
+  </div>
+  {{ end }}
+{{ end }}
+<!-- /banner -->
+
+
+
+{{ if .Site.Data.homepage.cta.enable }}
+  {{ partial "cta.html" . }}
+{{ end }}
+
+
+<!-- about -->
+{{ if .Site.Data.homepage.about.enable }}
+{{ with .Site.Data.homepage.about }}
+<section class="section">
+  <div class="container">
+    <div class="row justify-content-around align-items-center">
+      <div class="col-lg-5 col-md-6">
+        <img class="img-fluid pb-4" src="{{ .image | absURL }}" alt="">
+      </div>
+      <div class="col-md-6 col-lg-5">
+        <h2>{{ .title | markdownify }}</h2>
+        {{ .content | safeHTML }}
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+{{ end }}
+<!-- /about -->
+
+{{ if .Site.Data.homepage.cta2.enable }}
+  {{ partial "cta2.html" . }}
+{{ end }}
+
+
+<!-- promo video -->
+{{ if .Site.Data.homepage.video.enable }}
+{{ with .Site.Data.homepage.video }}
+<section class="section pb-0">
+  <div class="container">
+    <div class="row align-items-center justify-content-between">
+      <div class="col-lg-5 col-md-6">
+        <div class="img-border rounded mb-5 mb-md-0">
+          <img src="{{ .videoThumb | absURL }}" alt="video thumb" class="img-fluid rounded">
+          <a data-toggle="modal" data-src="{{ .videoURL | safeURL }}" data-target="#videoModal2"
+            class="text-color video-modal content-center"><i class="ti-control-play bg-gradient btn-play-lg"></i></a>
+          <!-- Modal -->
+          <div class="modal fade" id="videoModal2" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content border-0 rounded-0">
+                <iframe width="560" height="315" src="" id="video2" frameborder="0"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <h2>{{ .title | markdownify }}</h2>
+        {{ .content | safeHTML }}
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+{{ end }}
+<!-- /promo video -->
+
+
+
+
+
+
+<!-- animals -->
+{{ with .Site.Data.homepage.dishes }}
+<section class="section pb-0">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center mb-4">
+        <h2>{{ .title | markdownify }}</h2>
+      </div>
+      {{ range .items }}
+      <div class="col-lg-4 col-sm-6 mb-4">
+        <div class="card border-0 text-center">
+          <a href="{{ .link }}">
+            <img src="{{ .image | absURL }}" alt="{{ .name }}" class="card-img-top">
+          </a>
+          <div class="card-body">
+            <a href="{{ .Permalink }}" class="h4">{{ .name }}</a>
+            <p>{{ .description }}</p>
+            <div class="mb-4">
+              <span class="lead text-primary">{{ .Params.Price }}</span>
+              <s>{{ .Params.PriceBefore }}</s>
+            </div>
+            <a href="{{ .link }}" class="btn btn-sm btn-outline-primary">View</a>                        
+          </div>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+<!-- /animals -->
+
+
+<!-- material -->
+{{ if .Site.Data.homepage.events.enable }}
+{{ with .Site.Data.homepage.events }}
+<section class="section mb-6">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 mx-auto text-center">
+        <h2>{{ .title | markdownify }}</h2>
+        <p>{{ .subtitle | markdownify }}</p>
+      </div>
+    </div>
+    <div class="row">
+      {{ range .eventItem }}
+      <div class="col-lg-3 col-md-4 col-sm-6">
+        <a href="{{ .link }}">
+          <div class="card zoom-xs border-0 text-center">
+            <img src="{{ .image | absURL }}" alt="material" class="card-img-top border-0">
+            <div class="card-body">
+              <h4>{{ .title | markdownify }}</h4>
+              <p>{{ .content | markdownify }}</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+{{ end }}
+<!-- /material -->
+
+
+{{ if .Site.Data.homepage.cta3.enable }}
+  {{ partial "cta3.html" . }}
+{{ end }}
+
+
+
+<!-- advantage -->
+{{ if .Site.Data.homepage.advantage.enable }}
+  {{ with .Site.Data.homepage.advantage }}
+  <section class="section mb-5">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <h2>{{ .title | markdownify }}</h2>
+          <p class="mb-4">{{ .subtitle | markdownify }}</p>
+          <ul class="list-unstyled" style="columns: 2;">
+            {{ range .advantageList }}
+            <li class="mb-3"><i class="ti-arrow-circle-right text-primary mr-2"></i>{{ .listItem }}</li>
+            {{ end }}
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <img src="{{ .image | absURL}}" class="img-fluid" alt="">
+        </div>
+      </div>
+    </div>
+  </section>
+  {{ end }}
+{{ end }}
+<!-- /advantage -->
+
+
+
+{{ with .Site.Data.homepage.compare }}
+  {{ partial "compare.html" . }}
+{{ end }}
+
+
+{{ if .Site.Data.homepage.cta4.enable }}
+  {{ partial "cta4.html" . }}
+{{ end }}
+
+<!-- testimonial -->
+{{ if .Site.Data.homepage.testimonial.enable }}
+{{ with .Site.Data.homepage.testimonial }}
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h2>{{ .title | markdownify }}</h2>
+      </div>
+    </div>
+    <div class="row testimonial-slider">
+      {{ range .testimonialItem }}
+      <div class="col-4">
+        <div class="card border-primary text-center">
+          <div class="card-body">
+            <img src="{{ .image | absURL }}" class="client-img" alt="{{ .name | markdownify }}">
+            <p class="quoted">{{ .content | markdownify }}</p>
+            <h6 class="font-weight-medium">{{ .name | markdownify }}</h6>
+            <small>{{ .designation | markdownify }}</small>
+            <ul class="list-inline rating {{ .rating | lower }} mt-3">
+              <li class="list-inline-item mx-0"><i class="ti-star"></i></li>
+              <li class="list-inline-item mx-0"><i class="ti-star"></i></li>
+              <li class="list-inline-item mx-0"><i class="ti-star"></i></li>
+              <li class="list-inline-item mx-0"><i class="ti-star"></i></li>
+              <li class="list-inline-item mx-0"><i class="ti-star"></i></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+{{ end }}
+<!-- /testimonial -->
+
+{{ end }}

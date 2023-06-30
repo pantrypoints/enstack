@@ -1,0 +1,212 @@
+############################ banner ##########################
+banner:
+  enable : true
+  title : "Affordable, World-Class Cebu Lechon"
+  content: "Elivir's is a Filipino restaurant that specializes in Cebu Lechon in Quezon City, Philippines. Our ingredients are sourced from environmentally-conscious local suppliers."
+  image : "lechon.jpg"
+  button1:
+    enable : true
+    label : "View Main Menu"
+    link : "main"    
+
+  # demo video
+  video:
+    enable : true
+    btntxt: "This week's recommendation"
+    videoURL : "https://www.youtube.com/embed/aWYWcJZoqBM"
+    # Lin recommend https://youtu.be/hAWOU9Kw1bo
+
+
+
+########################## About ##############################
+about:
+  enable : true
+  title : "Our Mission"
+  content : "<p>To make quality Filipino food that is affordable yet environmentally sustainable. We give attention to food safety without the high cost by using our long expertise in food service management and procurement
+  <p>To this end, we make sure that our pig suppliers are meticulously chosen for their quality in raising their pigs according to the Swine Health Regulations. 
+  Our lechon comes from a government-approved slaughterhouse and is thoroughly prepared for charcoal-roasting."
+  image : "/m/curry.jpg"
+
+
+
+ 
+
+
+
+######################## Promo Video ##########################
+video:
+  enable : true
+  title : "Elivir's Delights Menu"
+  content: "<p>Our founder explains what Elivir is all about -- Cebu Lechon!</p> 
+  <p>Cebuanos have been well-known for roasting lechon in a way that is flavorful, tasty, and mouth-watering, 
+  with meat that is tender, juicy, and aromatic, with a crispy-skin.</p>
+  <p>We pride ourselves in having a Cebuano Chef with a long experience in making Cebu-style lechon for many years. 
+  We also have a long-time 'Lechonero' from La Loma, Manila helping us get the best quality lechon."    
+  # content : "To establish a sustainable animal shelter and build a community where people care for animals and treat them with respect and kindness."
+  # Angel's Shelter is an holistic animal shelter in Laguna. Holistic means that we don't only do animal resuce and adoption, but also community-building events, healthy eating, humanistic learning, and social work"
+  videoThumb : "/graphics/delights.jpg"
+  videoURL : "https://www.youtube.com/embed/VSaoTSxSvw0"
+
+
+
+compare:
+  enable : true
+  title : "Compare Elivir's Prices"
+  subtitle : "Our unique procurement system lets us have lower costs which leads to lower prices for our customers."
+  items:
+    - name: "Lechon Espesyal"
+      content: "<span class='text-danger'>1 kg @ 1,400 pesos<br>500 grams @ 700 pesos<br>250 grams @ 350 pesos<br>-</span>"
+      image: "/icons/l.jpg"      
+    - name: "Cebu Lechon"
+      content: "<span class='text-danger'>1 kg @ 1,300 pesos<br>500 grams @ 675 pesos<br>250 grams @ 350 pesos<br>-</span>"
+      image: "/icons/r.jpg"          
+    - name: "Cebu Lechon"
+      content: "<span class='text-primary'>1 kg @ 1,000 pesos<br>500 grams @ 550 pesos<br>250 grams @ 300 pesos<br>125 grams @ 150 pesos</span>"
+      image: "logoblue.jpg"
+###################### Call to action ########################
+
+cta:
+  enable : true
+  title : "We Accept Catering"
+  content : "We accept catering for events, parties, and budget-friendly workplace meals for nearby businesses."
+  image : "/photos/catering.jpg"
+  # overlayImage : "images/cta-overlay.png"
+  # button:
+  #   label : "View details"
+  #   link : "/graphics/elivirsopening.jpg"
+
+
+cta2:
+  enable : true
+  title : "Free Tinola Soup with every order"
+  content : "All our main dishes come with free tinola soup"
+  image : "soup200.jpg"
+  # overlayImage : "images/cta-overlay.png"
+  # button:
+  #  label : "View flyer"
+  #  link : "/promo.jpg"
+
+
+cta3:
+  enable : true
+  title : "Free Venue for Birthdays and Events"
+  content : "Use our restaurant for your birthday or events for free! Our restaurant can accomodate 30 people and is located along Commonwealth Avenue, Tandang Sora Quezon City."
+  image : "/blog/opening300.jpg"
+  # title : "Live Band every Friday and Saturday evening"
+  # content : "See Pards Duo perform every Friday and Kharizma every Saturday"
+  # image : "/photos/duo.jpg"
+  # title : "Whole Lechon available on Fridays"
+  # content : "Call +63 969 436 0497 or 028 376 6419 to order"
+  # image : "/photos/lechon.jpg"
+  # overlayImage : "images/cta-overlay.png"
+  # button:
+  #   label : "View flyer"
+  #   link : "/promo.jpg"
+
+cta4:
+  enable : true
+  title : "Earn Points for Every Delights Purchase"
+  content : "Claim dishes or items for free based on your points"
+  image : "/graphics/elivirsrewards400.png"
+  # overlayImage : "images/cta-overlay.png"
+  button:
+    label : "Check it out"
+    link : "https://elivirs.pantrypoints.com"
+
+
+######################## raw material #######################
+events:
+  enable : false
+  title : "Recent Events"
+  # subtitle : "Get all that you need"
+  eventItem:
+    # material item loop
+    - title : "T-shirt silkscreen"
+      link: "/events/"
+      image : "e/220331g.jpg"
+      content : "Mr. Panya dropped by during our art class"
+      
+
+
+dishes:
+  enable : true
+  title : "Our Delightful Specialties"
+  items :
+    - name: "Lechon" 
+      image: "/m/lechon.jpg"
+      description: "Thick and Juicy, truly in the Cebu style"
+      link: "/main/lechon/"
+    - name: "Lechon Paksiw"
+      image: "/m/paksiw2.jpg"
+      description: "Excellent with beer and your buddies"      
+      link: "/main/paksiw/"
+    - name: "Lumpiang Gulay"
+      image: "/v/lumpia.jpg"
+      description: "Affordable at only 11 pesos per piece"      
+      link: "/veggies/lumpia/"      
+    # - name: "Tapsilog" 
+    #   image: "/b/tapsi.jpg"
+    #   description: "The classic Filipino breakfast"
+    #   link: "/breakfast/tapsilog/"      
+
+
+########################### Advantage #########################
+
+advantage:
+  enable : false
+  title : "Advantages Of Using <br> Our Product"
+  subtitle : "Lorem ipsum dolor sit amet, da decal consetetur<br> sadipscing elitr, sed diam nonumya eirmod"
+  image : "images/advantage.png"
+  advantageList:
+    # advantage list loop
+    - listItem : "Extremely lightweight"
+    - listItem : "Excellent breathability"
+    - listItem : "Can increase Cell activation"
+    - listItem : "Glowing Skin In 7 Days"
+    - listItem : "Increasing Glow Of Face"
+    - listItem : "More Beautiful Face Skin"
+
+
+
+######################## Products #############################
+services:
+  enable : true
+  title : "Our Menu"
+  # product item comes from "content/products"
+
+
+########################## Testimonial ########################
+testimonial:
+  enable : true
+  title : "Feedback"
+  testimonialItem:
+    - name : "Huong"
+      image : "avatars/huong.jpg" # size 100px*100px
+      designation : "Tourist"
+      content : "Their lechon is excellent value for money"
+      rating : "five" # rating star, one to five
+            
+    - name : "John"
+      image : "avatars/john.jpg" # size 100px*100px
+      designation : "English Teacher"
+      content : "This is a great place for Filipino food. Truly Pinoy!"
+      rating : "four" # rating star, one to five
+      
+    - name : "Lam"
+      image : "avatars/lam.jpg" # size 100px*100px
+      designation : "Student @ University of the Philippines"
+      content : "It has a good location at Commonwealth Avenue which is near my university. "
+      rating : "four" # rating star, one to five
+      
+    - name : "Juan"
+      image : "avatars/jun.jpg" # size 100px*100px
+      designation : "Web Developer"
+      content : "They have vegetable dishes such as Chopsuey and Pinakbet for health-conscious diners."
+      rating : "four" # rating star, one to five
+      
+    - name : "Anne"
+      image : "avatars/anh.jpg" # size 100px*100px
+      designation : "Student @ University of the Philippines"
+      content : "The affordables at the corner shop are very convenient for students like me."
+      rating : "four" # rating star, one to five      
+      

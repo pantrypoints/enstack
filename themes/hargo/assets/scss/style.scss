@@ -1,0 +1,44 @@
+/*!------------------------------------------------------------------
+[MAIN STYLESHEET]
+
+PROJECT:	Project Name
+VERSION:	Versoin Number
+-------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+[TABLE OF CONTENTS]
+-------------------------------------------------------------------*/
+
+.zoom-xs:hover { transform: scale(1.02); transition: 0.1s; -webkit-filter: grayscale(100%); filter: grayscale(100%);}
+.zoom-sm:hover { transform: scale(1.05); transition: 0.1s; -webkit-filter: grayscale(100%); filter: grayscale(100%);}
+.zoom:hover { transform: scale(1.1); transition: 0.1s; -webkit-filter: grayscale(100%); filter: grayscale(100%);}
+.zoom-lg:hover { transform: scale(1.3); transition: 0.1s; -webkit-filter: grayscale(100%); filter: grayscale(100%);}
+.zoom-xl:hover { transform: scale(2); transition: 0.1s; -webkit-filter: grayscale(100%); filter: grayscale(100%);}
+
+a {
+  color: coral; 
+  text-decoration: none !important;
+ }
+
+
+body {
+  // #ceffe9
+  // #dbffc7ff
+  background-color: #d2e1ff !important; 
+
+}
+
+
+@import 'variables';
+
+@import 'mixins';
+
+@import 'typography';
+
+@import 'buttons';
+
+@import 'common';
+
+@import 'templates/navigation';
+
+@import 'templates/homepage';

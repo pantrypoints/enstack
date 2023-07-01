@@ -1,5 +1,5 @@
 ######################## default configuration ####################
-baseURL = "https://www.elivirs.com"
+baseURL = "https://enstack.pages.dev/"
 languageCode = "en-us"
 title = "Elivir's Cebu Lechon Restaurant | Quezon City"
 theme = "hargo"

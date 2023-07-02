@@ -1,6 +1,10 @@
-## Readme
+# Static Site Demo
 
 This is the static site for the entry of Team Pantrypoints to the Enstack Hackathon
+
+This is forked from the [Hargo Theme](https://github.com/themefisher/hargo-hugo) 
+
+Live demo is at https://enstack.pages.dev/
 
 
 ## Instuctions

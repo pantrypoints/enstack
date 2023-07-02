@@ -18,9 +18,9 @@ func main() {
 
     // Create a Product instance
     product := Product{
-        name:        "Adidas",
-        description: "Adidas is a popular streetfood",
-        photo:       "https://enstack.pages.dev/a/adidas.jpg",
+        Name:        "Adidas",
+        Description: "Adidas is a popular streetfood",
+        Photo:       "https://enstack.pages.dev/a/adidas.jpg",
     }
 
     // Convert the Product instance to JSON

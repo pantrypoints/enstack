@@ -38,7 +38,11 @@ func main() {
     }
     defer resp.Body.Close()
 
-    fmt.Println("Response Status:", resp.Status)
+    if resp.StatusCode == http.StatusOK {
+        fmt.Println("Product created successfully.")
+    } else {
+        fmt.Println("Failed to create product. Status code:", resp.StatusCode)
+    }
 
     // Read the response body
     body := new(bytes.Buffer)

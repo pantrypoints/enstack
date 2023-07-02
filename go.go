@@ -14,7 +14,7 @@ type Product struct {
 }
 
 func main() {
-    url := "https://example.com/api/products"
+    url := "https://enstack.pages.dev/api/products"
 
     // Create a Product instance
     product := Product{

@@ -14,13 +14,13 @@ type Product struct {
 }
 
 func main() {
-    url := "https://enstack.pages.dev/api/products"
+    url := "https://enstack.gigalixirapp.com//api/products"
 
     // Create a Product instance
     product := Product{
-        Name:        "Sample Product",
-        Description: "This is a sample product",
-        Photo:       "https://example.com/product.jpg",
+        name:        "Adidas",
+        description: "Adidas is a popular streetfood",
+        photo:       "https://enstack.pages.dev/a/adidas.jpg",
     }
 
     // Convert the Product instance to JSON
